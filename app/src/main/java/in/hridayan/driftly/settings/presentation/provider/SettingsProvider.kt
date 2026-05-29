@@ -54,12 +54,6 @@ object SettingsProvider {
                 iconResId = R.drawable.ic_settings
             ),
             nullPreferenceItem(
-                key = SettingsKeys.BEHAVIOR,
-                titleResId = R.string.behavior,
-                descriptionResId = R.string.des_behavior,
-                iconVector = Icons.Rounded.SentimentNeutral
-            ),
-            nullPreferenceItem(
                 key = SettingsKeys.NOTIFICATION_SETTINGS,
                 titleResId = R.string.notifications,
                 descriptionResId = R.string.des_notifications,
@@ -169,29 +163,7 @@ object SettingsProvider {
         )
     )
 
-    val behaviorPageList: List<PreferenceGroup> = listOf(
-        categorizedItems(
-            categoryNameResId = R.string.calendar,
-            boolPreferenceItem(
-                key = SettingsKeys.STREAK_MODIFIER,
-                titleResId = R.string.show_attendance_steaks,
-                descriptionResId = R.string.des_show_attendance_streaks,
-                iconVector = Icons.Rounded.DateRange,
-            ),
-            boolPreferenceItem(
-                key = SettingsKeys.REMEMBER_CALENDAR_MONTH_YEAR,
-                titleResId = R.string.remember_month_year,
-                descriptionResId = R.string.des_remember_month_year,
-                iconVector = Icons.Rounded.EventAvailable
-            ),
-            boolPreferenceItem(
-                key = SettingsKeys.START_WEEK_ON_MONDAY,
-                titleResId = R.string.start_week_on_monday,
-                descriptionResId = R.string.des_start_week_on_monday,
-                iconVector = Icons.Rounded.CalendarViewWeek
-            )
-        )
-    )
+    val behaviorPageList: List<PreferenceGroup> = emptyList()
 
     val backupPageList: List<PreferenceGroup> = listOf(
         categorizedItems(
@@ -293,6 +265,27 @@ object SettingsProvider {
                 titleResId = R.string.auto_handle_unmarked_days,
                 descriptionResId = R.string.des_auto_handle_unmarked_days,
                 iconVector = Icons.Rounded.EventAvailable
+            )
+        ),
+        categorizedItems(
+            categoryNameResId = R.string.calendar,
+            boolPreferenceItem(
+                key = SettingsKeys.STREAK_MODIFIER,
+                titleResId = R.string.show_attendance_steaks,
+                descriptionResId = R.string.des_show_attendance_streaks,
+                iconVector = Icons.Rounded.DateRange,
+            ),
+            boolPreferenceItem(
+                key = SettingsKeys.REMEMBER_CALENDAR_MONTH_YEAR,
+                titleResId = R.string.remember_month_year,
+                descriptionResId = R.string.des_remember_month_year,
+                iconVector = Icons.Rounded.EventAvailable
+            ),
+            boolPreferenceItem(
+                key = SettingsKeys.START_WEEK_ON_MONDAY,
+                titleResId = R.string.start_week_on_monday,
+                descriptionResId = R.string.des_start_week_on_monday,
+                iconVector = Icons.Rounded.CalendarViewWeek
             )
         )
     )

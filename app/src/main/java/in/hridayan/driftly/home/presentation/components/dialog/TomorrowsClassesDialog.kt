@@ -13,6 +13,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.AccessTime
+import androidx.compose.material3.Icon
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -178,6 +183,13 @@ fun TomorrowsClassesContent(
                                     color = MaterialTheme.colorScheme.onSurfaceVariant
                                 )
                             }
+                             Spacer(modifier = Modifier.width(16.dp))
+                             Icon(
+                                 imageVector = Icons.Rounded.AccessTime,
+                                 contentDescription = null,
+                                 tint = MaterialTheme.colorScheme.primary,
+                                 modifier = Modifier.size(24.dp)
+                             )
                         }
                     }
                 }

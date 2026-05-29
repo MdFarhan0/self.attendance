@@ -17,7 +17,6 @@ import `in`.hridayan.driftly.core.common.constants.UrlConst
 import `in`.hridayan.driftly.core.domain.model.NotificationTags
 import `in`.hridayan.driftly.navigation.AboutScreen
 import `in`.hridayan.driftly.navigation.BackupAndRestoreScreen
-import `in`.hridayan.driftly.navigation.BehaviorScreen
 import `in`.hridayan.driftly.navigation.DarkThemeScreen
 import `in`.hridayan.driftly.navigation.LookAndFeelScreen
 import `in`.hridayan.driftly.navigation.NotificationScreen
@@ -194,10 +193,6 @@ class SettingsViewModel @Inject constructor(
 
                 SettingsKeys.NOTIFICATION_SETTINGS -> _uiEvent.emit(
                     SettingsUiEvent.Navigate(NotificationScreen)
-                )
-
-                SettingsKeys.BEHAVIOR -> _uiEvent.emit(
-                    SettingsUiEvent.Navigate(BehaviorScreen)
                 )
 
                 SettingsKeys.BACKUP_AND_RESTORE -> _uiEvent.emit(
