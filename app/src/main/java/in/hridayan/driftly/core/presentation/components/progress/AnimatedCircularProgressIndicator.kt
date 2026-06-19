@@ -1,8 +1,7 @@
 package `in`.hridayan.driftly.core.presentation.components.progress
 
 import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.FastOutSlowInEasing
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.spring
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -25,9 +24,9 @@ fun AnimatedCircularProgressIndicator(
         if(!progress.isNaN())
         animatedProgress.animateTo(
             targetValue = progress.coerceIn(0f, 1f),
-            animationSpec = tween(
-                durationMillis = animationDuration,
-                easing = FastOutSlowInEasing
+            animationSpec = spring(
+                dampingRatio = 0.8f,
+                stiffness = 400f
             )
         )
     }

@@ -7,6 +7,7 @@ import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
@@ -438,8 +439,12 @@ fun CalendarScreen(
             AnimatedContent(
                 targetState = insight,
                 transitionSpec = {
-                    (slideInVertically { it } + fadeIn()).togetherWith(
-                        slideOutVertically { -it } + fadeOut()
+                    (slideInVertically(
+                        animationSpec = spring(dampingRatio = 0.8f, stiffness = 400f)
+                    ) { it } + fadeIn(animationSpec = spring(dampingRatio = 0.8f, stiffness = 400f))).togetherWith(
+                        slideOutVertically(
+                            animationSpec = spring(dampingRatio = 0.8f, stiffness = 400f)
+                        ) { -it } + fadeOut(animationSpec = spring(dampingRatio = 0.8f, stiffness = 400f))
                     )
                 },
                 label = "insight_animation",
