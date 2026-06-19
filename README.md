@@ -107,7 +107,7 @@ The app doesn't just show a percentage. It tells you what to do:
 * **Automation**: Toggle "Auto Handle Unmarked Days" in settings to let the app automatically manage unmarked classes.
 * **Weekly Grid**: Check the Full Timetable dialog to review your entire weekly schedule at a glance.
 
----
+--
 
 ## 🔧 Technical Specifications
 
@@ -117,7 +117,7 @@ The app doesn't just show a percentage. It tells you what to do:
 * **Database**: Room SQLite (100% Offline-first)
 * **Background Tasks**: WorkManager & AlarmManager
 
----
+-
 
 ## Installation
 
