@@ -46,12 +46,13 @@ fun ChangelogBottomSheet(
         scrimColor = adaptiveModalScrimColor(),
         tonalElevation = 0.dp,
         shape = RoundedCornerShape(20.dp),
-        modifier = Modifier.padding(horizontal = 15.dp, vertical = 16.dp),
+        modifier = Modifier.padding(horizontal = 15.dp, vertical = 16.dp).widthIn(max = 600.dp),
         dragHandle = null
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
+                .widthIn(max = 600.dp)
                 .navigationBarsPadding()
                 .padding(horizontal = 10.dp)
                 .padding(bottom = 28.dp, top = 16.dp),
@@ -84,8 +85,9 @@ fun ChangelogBottomSheet(
                 verticalArrangement = Arrangement.spacedBy(20.dp),
                 contentPadding = PaddingValues(bottom = 10.dp)
             ) {
-                itemsIndexed(items = recentChangelog) { _, item ->
+                itemsIndexed(items = recentChangelog, key = { _, item -> item.versionName }) { _, item ->
                     ChangelogItemLayout(
+                        modifier = Modifier.animateItem(spring(dampingRatio = 0.8f, stiffness = 400f)),
                         versionName = item.versionName,
                         changelog = changelogViewModel.splitStringToLines(item.changelog)
                     )

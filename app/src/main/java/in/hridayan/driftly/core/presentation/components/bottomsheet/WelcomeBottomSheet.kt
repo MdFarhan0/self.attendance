@@ -46,12 +46,13 @@ fun WelcomeBottomSheet(
         scrimColor = adaptiveModalScrimColor(),
         tonalElevation = 0.dp,
         shape = RoundedCornerShape(20.dp),
-        modifier = Modifier.padding(horizontal = 15.dp, vertical = 16.dp),
+        modifier = Modifier.padding(horizontal = 15.dp, vertical = 16.dp).widthIn(max = 600.dp),
         dragHandle = null
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
+                .widthIn(max = 600.dp)
                 .navigationBarsPadding()
                 .padding(horizontal = 10.dp)
                 .padding(bottom = 28.dp, top = 16.dp),
@@ -117,7 +118,7 @@ fun WelcomeBottomSheet(
                     )
                 )
 
-                items(features.size) { index ->
+                items(features.size, key = { it }) { index ->
                     val feature = features[index]
                     val isFirst = index == 0
                     val isLast = index == features.lastIndex
@@ -129,7 +130,7 @@ fun WelcomeBottomSheet(
                     }
 
                     Surface(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier.fillMaxWidth().animateItem(spring(dampingRatio = 0.8f, stiffness = 400f)),
                         shape = shape,
                         color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.6f),
                         contentColor = MaterialTheme.colorScheme.onPrimaryContainer,

@@ -314,16 +314,33 @@ fun HomeScreen(
 
                 if (subjectCount == 0) {
                     item {
-                        Text(
+                        Box(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .animateItem()
-                                .padding(horizontal = 25.dp)
-                                .alpha(0.75f),
-                            text = stringResource(R.string.no_subject_yet),
-                            style = MaterialTheme.typography.bodyLarge,
-                            textAlign = TextAlign.Center
-                        )
+                                .padding(horizontal = 25.dp, vertical = 40.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            androidx.compose.foundation.layout.Column(
+                                horizontalAlignment = Alignment.CenterHorizontally
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Rounded.Analytics,
+                                    contentDescription = null,
+                                    modifier = Modifier.size(64.dp).alpha(0.5f),
+                                    tint = MaterialTheme.colorScheme.tertiary
+                                )
+                                Spacer(modifier = Modifier.height(16.dp))
+                                Text(
+                                    modifier = Modifier.alpha(0.75f),
+                                    text = stringResource(R.string.no_subject_yet),
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    fontWeight = FontWeight.Bold,
+                                    textAlign = TextAlign.Center,
+                                    color = MaterialTheme.colorScheme.onSurface
+                                )
+                            }
+                        }
                     }
                 }
 
@@ -571,13 +588,13 @@ private fun DriftlyMorphingFab(
 
     val fabWidth by transition.animateDp(
         label = "fab_width",
-        transitionSpec = { spring(dampingRatio = 0.7f, stiffness = 500f) }
+        transitionSpec = { spring(dampingRatio = 0.8f, stiffness = 400f) }
     ) { if (it) 75.dp else 170.dp }
 
     val cornerRadius by transition.animateDp(
         label = "corner_radius",
-        transitionSpec = { spring(dampingRatio = 0.7f, stiffness = 500f) }
-    ) { if (it) 37.5.dp else 16.dp }
+        transitionSpec = { spring(dampingRatio = 0.8f, stiffness = 400f) }
+    ) { if (it) 37.5.dp else 22.dp }
 
     Surface(
         modifier = Modifier.size(width = fabWidth, height = 75.dp),

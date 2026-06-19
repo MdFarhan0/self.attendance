@@ -29,11 +29,11 @@ fun Navigation() {
             composable<HomeScreen>(
                 exitTransition = {
                     if (targetState.destination.hasRoute<CalendarScreen>()) slideFadeOutToLeft()
-                    else tomatoForwardExit()
+                    else sharedAxisXExit()
                 },
                 popEnterTransition = {
                     if (initialState.destination.hasRoute<CalendarScreen>()) slideFadeInFromLeft()
-                    else tomatoPopEnter()
+                    else sharedAxisXPopEnter()
                 }
             ) {
                 HomeScreen()
@@ -47,70 +47,70 @@ fun Navigation() {
             }
 
             composable<SettingsScreen>(
-                enterTransition = { tomatoForwardEnter() },
-                exitTransition = { tomatoForwardExit() },
-                popEnterTransition = { tomatoPopEnter() },
-                popExitTransition = { tomatoPopExit() }
+                enterTransition = { sharedAxisXEnter() },
+                exitTransition = { sharedAxisXExit() },
+                popEnterTransition = { sharedAxisXPopEnter() },
+                popExitTransition = { sharedAxisXPopExit() }
             ) {
                 SettingsScreen()
             }
 
             composable<LookAndFeelScreen>(
-                enterTransition = { tomatoForwardEnter() },
-                exitTransition = { tomatoForwardExit() },
-                popEnterTransition = { tomatoPopEnter() },
-                popExitTransition = { tomatoPopExit() }
+                enterTransition = { sharedAxisXEnter() },
+                exitTransition = { sharedAxisXExit() },
+                popEnterTransition = { sharedAxisXPopEnter() },
+                popExitTransition = { sharedAxisXPopExit() }
             ) {
                 LookAndFeelScreen()
             }
 
             composable<CustomisationScreen>(
-                enterTransition = { tomatoForwardEnter() },
-                exitTransition = { tomatoForwardExit() },
-                popEnterTransition = { tomatoPopEnter() },
-                popExitTransition = { tomatoPopExit() }
+                enterTransition = { sharedAxisXEnter() },
+                exitTransition = { sharedAxisXExit() },
+                popEnterTransition = { sharedAxisXPopEnter() },
+                popExitTransition = { sharedAxisXPopExit() }
             ) {
                 CustomisationScreen()
             }
 
             composable<FeaturesScreen>(
-                enterTransition = { tomatoForwardEnter() },
-                exitTransition = { tomatoForwardExit() },
-                popEnterTransition = { tomatoPopEnter() },
-                popExitTransition = { tomatoPopExit() }
+                enterTransition = { sharedAxisXEnter() },
+                exitTransition = { sharedAxisXExit() },
+                popEnterTransition = { sharedAxisXPopEnter() },
+                popExitTransition = { sharedAxisXPopExit() }
             ) {
                 FeaturesScreenComposable()
             }
 
             composable<AttendanceWrappedScreen>(
-                enterTransition = { tomatoForwardEnter() },
-                popExitTransition = { tomatoPopExit() }
+                enterTransition = { sharedAxisXEnter() },
+                popExitTransition = { sharedAxisXPopExit() }
             ) {
                 AttendanceWrappedScreen()
             }
 
             composable<DarkThemeScreen>(
-                enterTransition = { tomatoForwardEnter() },
-                popExitTransition = { tomatoPopExit() }
+                enterTransition = { sharedAxisXEnter() },
+                popExitTransition = { sharedAxisXPopExit() }
             ) {
                 DarkThemeScreen()
             }
 
 
             composable<AboutScreen>(
-                enterTransition = { tomatoForwardEnter() },
-                exitTransition = { tomatoForwardExit() },
-                popEnterTransition = { tomatoPopEnter() },
-                popExitTransition = { tomatoPopExit() }
+                enterTransition = { sharedAxisXEnter() },
+                exitTransition = { sharedAxisXExit() },
+                popEnterTransition = { sharedAxisXPopEnter() },
+                popExitTransition = { sharedAxisXPopExit() }
             ) {
                 AboutScreen()
             }
 
             composable<ChangelogScreen>(
-                enterTransition = { tomatoForwardEnter() },
-                exitTransition = { tomatoForwardExit() },
-                popEnterTransition = { tomatoPopEnter() },
-                popExitTransition = { tomatoPopExit() }
+                enterTransition = { sharedAxisXEnter() },
+                exitTransition = { sharedAxisXExit() },
+                popEnterTransition = { sharedAxisXPopEnter() },
+                popExitTransition = { sharedAxisXPopExit() }
             ) {
                 `in`.hridayan.driftly.settings.presentation.page.changelog.screens.ChangelogScreen()
             }
@@ -122,15 +122,15 @@ fun Navigation() {
 
 
             composable<BackupAndRestoreScreen>(
-                enterTransition = { tomatoForwardEnter() },
-                popExitTransition = { tomatoPopExit() }
+                enterTransition = { sharedAxisXEnter() },
+                popExitTransition = { sharedAxisXPopExit() }
             ) {
                 BackupAndRestoreScreen()
             }
 
             composable<NotificationScreen>(
-                enterTransition = { tomatoForwardEnter() },
-                popExitTransition = { tomatoPopExit() }
+                enterTransition = { sharedAxisXEnter() },
+                popExitTransition = { sharedAxisXPopExit() }
             ) {
                 NotificationScreen()
             }
